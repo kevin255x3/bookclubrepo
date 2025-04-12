@@ -1,21 +1,26 @@
-// define api endpoints for category operations
+// category routes - api endpoints for category operations
 const express = require('express');
 const router = express.Router();
 const categoryController = require('../controllers/categoryController');
 
-// GET /api/categories - get all categories
+// get all categories
+// GET /api/categories
 router.get('/', categoryController.getAllCategories);
 
-// GET /api/categories/:id - get a single category by ID
+// get a single category by id
+// GET /api/categories/:id
 router.get('/:id', categoryController.getCategoryById);
 
-// POST /api/categories - create a new category
+// create a new category
+// POST /api/categories
 router.post('/', categoryController.createCategory);
 
-// PUT /api/categories/:id - update an existing category
+// update an existing category
+// PUT /api/categories/:id
 router.put('/:id', categoryController.updateCategory);
 
-// DELETE /api/categories/:id - delete a category
+// delete a category
+// DELETE /api/categories/:id
 router.delete('/:id', categoryController.deleteCategory);
 
 module.exports = router;

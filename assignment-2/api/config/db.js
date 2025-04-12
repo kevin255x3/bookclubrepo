@@ -6,9 +6,10 @@ const mysql = require('mysql2/promise');
 // better performmance
 const pool = mysql.createPool({
     host: process.env.DB_HOST || 'localhost',
-    user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || '',
+    user: process.env.DB_USER || 'bookclub_user',
+    password: process.env.DB_PASSWORD || 'Bookclub444!',
     database: process.env.DB_NAME || 'book_collection',
+    socketPath: '/tmp/mysql.sock', // had to use this to make it work for some reason (mac specific)
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
